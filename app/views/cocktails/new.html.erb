@@ -1,0 +1,19 @@
+<h1>New Cocktail</h1>
+
+<%= render 'form', cocktail: @cocktail %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <%= simple_form_for([@cocktail, @dose]) do |f| %>
+    <%= f.input :description, collection: ["a handful", "1 cup", "2 cups", "3 cups", "1 spoon", "2 spoons", "3 spoons", "1 cL", "2 cL", "3 cL"] %>
+
+      <%= f.submit %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+<%= link_to 'Back', cocktails_path %>

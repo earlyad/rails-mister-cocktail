@@ -1,0 +1,16 @@
+<div class="container">
+  <p>
+    <strong>Name:</strong>
+    <%= @cocktail.name %>
+  </p>
+
+  <div class="row">
+    <% @doses.each do |dose| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= render 'shared/dose_card', dose: dose %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= link_to 'Back', cocktails_path %>
+<%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
